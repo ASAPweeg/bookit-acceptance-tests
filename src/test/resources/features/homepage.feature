@@ -19,7 +19,7 @@ Feature: Home page
     When user logs in as a team member
     Then homepage should be displayed
 
-  @teacher
+  @teacher @wip
   Scenario: login as teacher
     When user logs in as a teacher
     Then homepage should be displayed

@@ -1,6 +1,5 @@
 Feature: login functionality
 
-  @wip
   Scenario: teacher login
     Given user on the login page
     And I add another useless line
