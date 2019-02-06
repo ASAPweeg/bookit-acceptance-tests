@@ -8,7 +8,7 @@ Feature: Home page
   Background:
     Given user on the login page
 
-  @leader @wip
+  @leader
   Scenario: login as team lead
     When user logs in as a team lead
     Then homepage should be displayed

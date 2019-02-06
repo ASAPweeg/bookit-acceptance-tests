@@ -21,7 +21,6 @@ public class HomePageStepDefinitions {
     @Given("user on the login page")
     public void user_on_the_login_page() {
         System.out.println("I am opening the login page");
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     @Then("homepage should be displayed")
