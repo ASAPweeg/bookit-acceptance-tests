@@ -15,4 +15,10 @@ public class MapPage {
     @FindBy(tagName = "h1")
     public WebElement header;
 
+    @FindBy(className = "map")
+    public WebElement map;
+
+    @FindBy(className = "subtitle")
+    public WebElement location;
+
 }

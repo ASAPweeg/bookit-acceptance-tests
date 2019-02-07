@@ -18,7 +18,7 @@ public class Hooks {
         // you can also add maximize screen here
     }
 
-//    @After
+    @After
     public void tearDown(Scenario scenario){
         System.out.println("I am reporting the results");
         // I want to take screenshot when current scenario fails.
