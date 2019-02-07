@@ -7,7 +7,6 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
@@ -19,12 +18,15 @@ public class Hooks {
         // you can also add maximize screen here
     }
 
-    @After
+//    @After
     public void tearDown(Scenario scenario){
         System.out.println("I am reporting the results");
-
+        // I want to take screenshot when current scenario fails.
+        // scenario.isFailed()  --> tells if the scenario failed or not
         if (scenario.isFailed()) {
+            // this line is for taking screenshot
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            // this line is adding the screenshot to the report
             scenario.embed(screenshot, "image/png");
         }
 
@@ -36,4 +38,6 @@ public class Hooks {
     public void setUpTeacher(){
         System.out.println("Set up teacher test");
     }
-}
+}    //  BREAK some time around 9.10 pm est. UPDATE YOUR CODE. I ALREADY PUSHED IT TO GITHUB
+    // git fetch origin
+    //git reset --hard origin/master
