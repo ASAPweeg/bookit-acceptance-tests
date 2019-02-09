@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MapPage {
+import java.util.List;
+
+public class MapPage extends NavigationMenu {
 
     public MapPage() {
         PageFactory.initElements(Driver.getDriver(),
@@ -20,5 +22,8 @@ public class MapPage {
 
     @FindBy(className = "subtitle")
     public WebElement location;
+
+    @FindBy(css = "a>span.room-name")
+    public List<WebElement> allRooms;
 
 }

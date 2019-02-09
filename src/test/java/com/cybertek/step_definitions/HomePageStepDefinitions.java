@@ -2,7 +2,6 @@ package com.cybertek.step_definitions;
 
 import com.cybertek.pages.MapPage;
 import com.cybertek.pages.SignInPage;
-import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import cucumber.api.java.en.Given;
