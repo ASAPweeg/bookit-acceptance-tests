@@ -1,6 +1,9 @@
 package com.cybertek.step_definitions;
 
+import com.cybertek.pages.MapPage;
 import com.cybertek.pages.MySelfPage;
+import com.cybertek.pages.RoomPage;
+import com.cybertek.utilities.Driver;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 
@@ -38,5 +41,22 @@ public class TeamDetailsStepDefinitions {
 
     }
 
+
+    @Then("user should be able to see quotes info for each room")
+    public void user_should_be_able_to_see_quotes_info_for_each_room(Map<String, String> rooms) {
+        System.out.println(rooms);
+        // get the name of the room
+        for (String room : rooms.keySet()) {
+            System.out.println(room);
+            // click on the room
+            MapPage mapPage = new MapPage();
+            mapPage.room(room).click();
+            // verify quote
+            RoomPage roomPage = new RoomPage();
+            Assert.assertEquals(rooms.get(room), roomPage.capacityQuote.getText());
+//            Driver.getDriver().navigate().back();
+            mapPage.map.click();
+        }
+    }
 
 }
