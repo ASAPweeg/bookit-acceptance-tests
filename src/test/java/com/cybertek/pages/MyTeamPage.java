@@ -7,18 +7,18 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class MyTeamNavigation extends NavigationMenu {
+public class MyTeamPage extends NavigationMenu {
 
-    public MyTeamNavigation() {
+    public MyTeamPage() {
         PageFactory.initElements(Driver.getDriver(),
                 this);
     }
 
     @FindBy(xpath = "//p[.='name']/../p[1]")
-	List<WebElement> allNames;
+	public List<WebElement> allNames;
 
 	@FindBy(xpath = "//p[.='role']/../p[1]")
-	List<WebElement> allRoles;
+	public List<WebElement> allRoles;
 
 
 }

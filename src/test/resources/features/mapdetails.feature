@@ -5,7 +5,7 @@ Feature: Map page details
     When user logs in using "ucharlot7y@nbcnews.com" and "archibaldmelloy"
     Then I should be able to see "ping pong" room
 
-  @wip
+
   Scenario: Light side all rooms
     Given user on the login page
     When user logs in using "ucharlot7y@nbcnews.com" and "archibaldmelloy"
@@ -14,6 +14,18 @@ Feature: Map page details
       | yale      |
       | princeton |
 
+
+  Scenario: Team members test
+    Given user on the login page
+    And user logs in using "ucharlot7y@nbcnews.com" and "archibaldmelloy"
+    When the user goes to the "my team" page
+    Then following team members should be displayed:
+      | Archibald |
+      | Leonard   |
+      | Lorette   |
+      | Durant    |
+
 # shortcut to format file in intellij
 # CMD+OPTION+L  mac
 # CMTR+ALT+L    win
+  # Kasim go

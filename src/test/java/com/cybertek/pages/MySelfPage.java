@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MySelfNavigation extends NavigationMenu {
+public class MySelfPage extends NavigationMenu {
 
-    public MySelfNavigation() {
+    public MySelfPage() {
         PageFactory.initElements(Driver.getDriver(),
                 this);
     }
