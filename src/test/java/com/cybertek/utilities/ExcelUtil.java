@@ -29,6 +29,8 @@ public class ExcelUtil {
             // Access the required test data sheet
             workBook = WorkbookFactory.create(ExcelFile);
             workSheet = workBook.getSheet(sheetName);
+            // check if sheet is null or not. null means  sheetname was wrong
+            Assert.assertNotNull("Sheet: \""+sheetName+"\" does not exist\n",workSheet);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -125,7 +127,7 @@ public class ExcelUtil {
     }
 
     public int rowCount() {
-        return workSheet.getLastRowNum();
+        return workSheet.getLastRowNum()+1;
     }
 
 }

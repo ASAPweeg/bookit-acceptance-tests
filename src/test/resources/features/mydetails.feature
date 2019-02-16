@@ -24,7 +24,6 @@ Feature: My details page
       | batch  | #8                  |
       | campus | VA                  |
 
-  @wip
   Scenario Outline: my information data driven test <user_name>
     Given user on the login page
     And user logs in using "<user_email>" and "<user_password>"
