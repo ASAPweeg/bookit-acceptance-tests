@@ -22,8 +22,10 @@ public class SignInPage {
     @FindBy(css = "button[type='submit']")
     public WebElement signIn;
 
+    public static String currentUserEmail;
 
     public void login(String email, String password){
+        currentUserEmail = email;
         this.email.sendKeys(email);
         this.password.sendKeys(password);
         signIn.click();
