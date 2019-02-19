@@ -1,4 +1,4 @@
-package com.cybertek.step_definitions;
+package com.cybertek.step_definitions.map;
 
 import com.cybertek.pages.MapPage;
 import com.cybertek.pages.MySelfPage;

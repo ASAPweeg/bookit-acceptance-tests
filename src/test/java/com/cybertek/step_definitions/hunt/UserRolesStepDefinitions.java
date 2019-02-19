@@ -1,4 +1,4 @@
-package com.cybertek.step_definitions;
+package com.cybertek.step_definitions.hunt;
 
 import com.cybertek.pages.HuntPage;
 import com.cybertek.pages.MySchedulePage;
