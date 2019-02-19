@@ -7,11 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MySelfPage extends NavigationMenu {
 
-    public MySelfPage() {
-        PageFactory.initElements(Driver.getDriver(),
-                this);
-    }
-
     @FindBy(xpath = "(//*[@class='title is-6'])[1]")
     public WebElement name;
 

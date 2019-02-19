@@ -9,11 +9,6 @@ import java.util.List;
 
 public class MyTeamPage extends NavigationMenu {
 
-    public MyTeamPage() {
-        PageFactory.initElements(Driver.getDriver(),
-                this);
-    }
-
     @FindBy(xpath = "//p[.='name']/../p[1]")
 	public List<WebElement> allNames;
 

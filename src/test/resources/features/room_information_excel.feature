@@ -7,7 +7,6 @@ Feature: room information functionality
     Then correct room information should be displayed for light side
 #    And room information should be displayed as given in "file_path" "sheetname"
 
-  @wip
   Scenario Outline: my information data driven test with excel <user_name>
     Given user on the login page
     And user logs in using "<user_email>" and "<user_password>"

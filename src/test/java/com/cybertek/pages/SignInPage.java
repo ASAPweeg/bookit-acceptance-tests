@@ -22,6 +22,13 @@ public class SignInPage {
     @FindBy(css = "button[type='submit']")
     public WebElement signIn;
 
+    @FindBy(tagName = "h1")
+    public WebElement title;
+
+    @FindBy(className = "subtitle")
+    public WebElement subtitle;
+
+
     public static String currentUserEmail;
 
     public void login(String email, String password){

@@ -33,7 +33,7 @@ public class LoginPageStepDefinitions {
     public void location_should_be(String expectedLocation) {
         MapPage mapPage = new MapPage();
 
-        String actualLocation = mapPage.location.getText();
+        String actualLocation = mapPage.title.getText();
         Assert.assertEquals(expectedLocation, actualLocation);
 
     }// BREAK FROM NOW TILL LATER . 15 mins or so

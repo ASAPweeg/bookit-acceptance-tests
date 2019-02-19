@@ -55,7 +55,7 @@ public class HomePageStepDefinitions {
 
         // ExpectedConditions.url to be
 
-        String actual = mapPage.header.getText();
+        String actual = mapPage.title.getText();
 
         // assertions are coming from Junit
         Assert.assertEquals(expected, actual);
