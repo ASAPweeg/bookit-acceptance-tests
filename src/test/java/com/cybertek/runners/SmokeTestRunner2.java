@@ -9,12 +9,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
              "html:target/default-cucumber-reports",
-              "json:target//json-reports/cucumber1.json"
+                "json:target//json-reports/cucumber2.json"
         },
         features = {"src/test/resources/features"},
         glue = "com/cybertek/step_definitions"
         , dryRun = false
-        , tags = "@wip2"
+        , tags = "@account"
 )
-public class CukesRunner {
+public class SmokeTestRunner2 {
 }

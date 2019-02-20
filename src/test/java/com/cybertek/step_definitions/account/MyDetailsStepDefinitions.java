@@ -1,4 +1,4 @@
-package com.cybertek.step_definitions;
+package com.cybertek.step_definitions.account;
 
 import com.cybertek.pages.MapPage;
 import com.cybertek.pages.MySelfPage;
@@ -12,7 +12,7 @@ import org.junit.Assert;
 import java.util.List;
 import java.util.Map;
 
-public class RoomDetailsStepDefinitions {
+public class MyDetailsStepDefinitions {
     @Then("correct room information should be displayed for light side")
     public void correct_room_information_should_be_displayed_for_light_side() {
         // get the room names from the excel file

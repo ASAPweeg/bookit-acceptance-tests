@@ -1,4 +1,4 @@
-@login
+#@login
 Feature: login functionality
 
   Scenario: teacher login
