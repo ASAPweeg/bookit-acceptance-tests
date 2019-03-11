@@ -1,5 +1,6 @@
 package com.cybertek.step_definitions;
 
+import com.cybertek.utilities.APIRunner;
 import com.cybertek.utilities.Driver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -11,12 +12,13 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-    @Before(order = 2)
+    @Before
     public void setUp(){
         System.out.println("I am setting up the test from the Hooks class!!!");
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         // you can also add maximize screen here
-        Driver.getDriver().manage().window().maximize();
+//        Driver.getDriver().manage().window().maximize();
     }
 
     @After
@@ -24,21 +26,31 @@ public class Hooks {
         System.out.println("I am reporting the results");
         // I want to take screenshot when current scenario fails.
         // scenario.isFailed()  --> tells if the scenario failed or not
-        if (scenario.isFailed()) {
-            // this line is for taking screenshot
-            final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            // this line is adding the screenshot to the report
-            scenario.embed(screenshot, "image/png");
+        String AA="";
+        if (!scenario.isFailed() ) {
+             AA=Driver.getDriver().getCurrentUrl();
+             if(AA.isEmpty()) {
+                 return;
+             }else {
+                 // this line is for taking screenshot
+                 final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+                 // this line is adding the screenshot to the report
+                 scenario.embed(screenshot, "image/png");
+             }
+
+
         }
+
+        if(scenario.isFailed() && APIRunner.getCr() != null){
+            scenario.write(APIRunner.getResponse().getJsonResponse());
+        }
+
+
+
 
         System.out.println("Closing driver");
         Driver.closeDriver();
     }
 
-    @Before(value = "@teacher", order = 11)
-    public void setUpTeacher(){
-        System.out.println("Set up teacher test");
-    }
-}    //  BREAK some time around 9.10 pm est. UPDATE YOUR CODE. I ALREADY PUSHED IT TO GITHUB
-    // git fetch origin
-    //git reset --hard origin/master
+
+}
