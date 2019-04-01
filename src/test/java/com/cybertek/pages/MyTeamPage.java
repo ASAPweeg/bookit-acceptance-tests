@@ -15,5 +15,8 @@ public class MyTeamPage extends NavigationMenu {
 	@FindBy(xpath = "//p[.='role']/../p[1]")
 	public List<WebElement> allRoles;
 
+	@FindBy(xpath = "//h1[.='team']/../h2")
+	public WebElement teamName;
+
 
 }
